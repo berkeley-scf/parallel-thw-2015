@@ -121,27 +121,22 @@ options(replace.assign=TRUE, width=55)
 \end_layout
 
 \begin_layout Chunk
-
 <<read-chunk, echo=FALSE>>= 
 \end_layout
 
 \begin_layout Chunk
-
 read_chunk('parallel.R') 
 \end_layout
 
 \begin_layout Chunk
-
 read_chunk('parallel.py') 
 \end_layout
 
 \begin_layout Chunk
-
 read_chunk('parallel.sh')
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -152,7 +147,15 @@ Note that my examples here will be silly toy examples for the purpose of
 
 \begin_layout Standard
 I will do some demos on a few Statistics Ubuntu 14.04 machines.
- Some of this can be replicated in the BCE Virtual Machine (see 
+ Some of this can be replicated in the 
+\begin_inset CommandInset href
+LatexCommand href
+name "BCE Virtual Machine"
+target "bce.berkeley.edu"
+
+\end_inset
+
+ (see 
 \emph on
 setupUbuntu.sh
 \emph default
@@ -592,12 +595,10 @@ Here's some code that when run in an R executable linked to a threaded BLAS
 \end_layout
 
 \begin_layout Chunk
-
 <<RlinAlg, cache=TRUE, eval=TRUE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -618,12 +619,10 @@ The R installation manual gives information on how to link R to a fast BLAS.
 \end_layout
 
 \begin_layout Chunk
-
 <<etc-alternatives, eval=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -632,12 +631,10 @@ To use a fast, threaded BLAS enabled on your own Mac, do the following:
 \end_layout
 
 \begin_layout Chunk
-
 <<MacBLAS, eval=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -1057,12 +1054,10 @@ top
 \end_layout
 
 \begin_layout Chunk
-
 <<foreach, eval=FALSE, tidy=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -1162,12 +1157,10 @@ First let's consider parallel apply.
 \end_layout
 
 \begin_layout Chunk
-
 <<parallelApply, eval=TRUE, tidy=FALSE, cache=TRUE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -1218,12 +1211,10 @@ parallel
 \end_layout
 
 \begin_layout Chunk
-
 <<mcparallel, eval=TRUE, cache=TRUE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -1300,12 +1291,10 @@ Pool.map()
 \end_layout
 
 \begin_layout Chunk
-
 <<python-mp, engine='python', eval=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -1321,12 +1310,10 @@ We can also manually dispatch the jobs as follows.
 \end_layout
 
 \begin_layout Chunk
-
 <<python-mp-manualDispatch, engine='python', eval=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -1350,12 +1337,10 @@ f()
 \end_layout
 
 \begin_layout Chunk
-
 <<python-pp, engine='python', eval=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -3276,12 +3261,10 @@ status open
 \end_layout
 
 \begin_layout Chunk
-
 <<Rmpi-usingMPIsyntax, cache=TRUE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -3685,12 +3668,10 @@ mpirun
 \end_layout
 
 \begin_layout Chunk
-
 <<Rmpi-foreach-multipleNodes, eval=FALSE, cache=TRUE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -3850,12 +3831,10 @@ makeCluster()
 \end_layout
 
 \begin_layout Chunk
-
 <<sockets-multipleNodes, cache=TRUE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -3878,12 +3857,10 @@ mpirun -machinefile .hosts -np 4 python file.py > file.out
 \end_layout
 
 \begin_layout Chunk
-
 <<python-mpi, eval=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -4032,12 +4009,10 @@ parSapply()
 \end_layout
 
 \begin_layout Chunk
-
 <<RNG-apply, eval=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -4051,12 +4026,10 @@ nextRNGStream()
 \end_layout
 
 \begin_layout Chunk
-
 <<RNGstream, eval=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -4082,12 +4055,10 @@ RNGkind("L'Ecuyer-CMRG")
 \end_layout
 
 \begin_layout Chunk
-
 <<RNG-mclapply, eval=FALSE, tidy=FALSE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -4207,12 +4178,10 @@ seed
 \end_layout
 
 \begin_layout Chunk
-
 <<RNG-doMPI, eval=TRUE>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -4273,12 +4242,10 @@ foreach
 \end_layout
 
 \begin_layout Chunk
-
 <<RNG-doRNG>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
@@ -4287,12 +4254,10 @@ Alternatively, you can do:
 \end_layout
 
 \begin_layout Chunk
-
 <<RNG-doRNG2>>=
 \end_layout
 
 \begin_layout Chunk
-
 @
 \end_layout
 
