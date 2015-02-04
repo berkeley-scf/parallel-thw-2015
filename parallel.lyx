@@ -3221,6 +3221,10 @@ end{verbatim}
 \end_layout
 
 \begin_layout Subsubsection
+Using R in a distributed memory context
+\end_layout
+
+\begin_layout Paragraph
 Rmpi example
 \end_layout
 
@@ -3292,7 +3296,7 @@ mpirun
  causes R to think it is not running interactively.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Note on supercomputers
 \end_layout
 
@@ -3318,6 +3322,36 @@ mpi.comm.size()
  to see if the workers are already set up.
 \end_layout
 
+\begin_layout Paragraph
+pbdR
+\end_layout
+
+\begin_layout Standard
+There is a relatively new effort to enhance R's capability for distributed
+ memory processing called pbdR.
+ pbdR is designed for SPMD processing in batch mode.
+ I haven't had time to pull together any example code, but pbdR provides
+ the following capabilities:
+\end_layout
+
+\begin_layout Itemize
+an alternative to Rmpi for interfacing with MPI
+\end_layout
+
+\begin_layout Itemize
+the ability to do some parallel apply-style computations
+\end_layout
+
+\begin_layout Itemize
+the ability to do distributed linear algebra by interfacing to ScaLapack
+\end_layout
+
+\begin_layout Standard
+Personally, I think the last of the three is the most exciting as its a
+ functionality not readily available in R or even more generally in other
+ readily-accessible software.
+\end_layout
+
 \begin_layout Subsubsection
 Python mpi4py
 \end_layout
@@ -3333,7 +3367,7 @@ mpirun
 \begin_layout Standard
 
 \family typewriter
-mpirun -np 4 python file.py
+mpirun -np 4 python file.py 
 \end_layout
 
 \begin_layout Standard
@@ -3628,11 +3662,12 @@ foreach
 \emph on
 startMPIcluster()
 \emph default
- with no arguments, it will start up 
+ with no arguments, it will start up one fewer worker processes than the
+ number of hosts listed in 
 \family typewriter
-$np-1
+.hosts
 \family default
- slave processes by default, so your R code will be more portable.
+, so your R code will be more portable.
  The reason for the 
 \family typewriter
 -np 1

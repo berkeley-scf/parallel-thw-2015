@@ -1,6 +1,8 @@
 ## @knitr RlinAlg
 
 require(RhpcBLASctl)
+# I use RhpcBLASctl to control threading for purpose of demo
+# but one can also set OMP_NUM_THREADS in the shell before invoking R
 x <- matrix(rnorm(5000^2), 5000)
 
 blas_set_num_threads(4)
@@ -125,22 +127,21 @@ print(results)
 
 ## @knitr Rmpi-foreach-multipleNodes
 
+## invoke R as:
+## mpirun -machinefile .hosts -np 1 R CMD BATCH --no-save file.R file.out
+
 library(Rmpi)
 library(doMPI)
 
-cl = startMPIcluster()  # by default will start np-1 slaves (leaving one for master)
+cl = startMPIcluster()  # by default will start one fewer slave
+# than elements in .hosts
+                                        
 
 registerDoMPI(cl)
 clusterSize(cl) # just to check
 
 results <- foreach(i = 1:200) %dopar% {
   out = mean(rnorm(1e7))
-}
-
-if(FALSE){
-  foreach(i = 1:20) %dopar% {
-    out = chol(crossprod(matrix(rnorm(3000^2),3000)))[1,2]
-  }
 }
 
 closeCluster(cl)
