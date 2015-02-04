@@ -80,6 +80,9 @@ job_server.destroy()
 
 ## @knitr python-mpi
 
+## put the following code in file.py and run:
+## mpirun -np 4 python file.py
+
 from mpi4py import MPI
 import numpy as np
 

@@ -151,13 +151,13 @@ Note that my examples here will be silly toy examples for the purpose of
 \end_layout
 
 \begin_layout Standard
-This document 
-\end_layout
-
-\begin_layout Standard
 I will do some demos on a few Statistics Ubuntu 14.04 machines.
- Some of this can be replicated in the BCE Virtual Machine, but some things
- such as MPI are not installed there (hopefully they will be soon).
+ Some of this can be replicated in the BCE Virtual Machine (see 
+\emph on
+setupUbuntu.sh
+\emph default
+ for how to do some setup for this), though one can't directly see multi-node
+ computations in that context.
 \end_layout
 
 \begin_layout Section
